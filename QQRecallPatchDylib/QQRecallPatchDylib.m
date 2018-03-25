@@ -34,6 +34,15 @@ CHConstructor {
     dispatch_once(&onceToken, ^{
         Class recallClass = objc_getClass("QQMessageRecallModule");
         [recallClass jr_swizzleMethod:@selector(handleRecallNotify:isOnline:) withMethod:@selector(dev_handleRecallNotify:isOnline:) error:nil];
+        
+        Class c2cProcessorClass = objc_getClass("RecallC2CBaseProcessor");
+        [c2cProcessorClass jr_swizzleMethod:@selector(getRecallMessageContent:) withMethod:@selector(c2c_getRecallMessageContent:) error:nil];
+        
+        Class grpProcessorClass = objc_getClass("RecallGroupProcessor");
+        [grpProcessorClass jr_swizzleMethod:@selector(getRecallMessageContent:item:msg:isOnline:) withMethod:@selector(grp_getRecallMessageContent:item:msg:isOnline:) error:nil];
+        
+        Class disProcessorClass = objc_getClass("RecallDiscussProcessor");
+        [disProcessorClass jr_swizzleMethod:@selector(getRecallMessageContent:item:msg:isOnline:) withMethod:@selector(dis_getRecallMessageContent:item:msg:isOnline:) error:nil];
     });
 }
 #pragma clang diagnostic pop

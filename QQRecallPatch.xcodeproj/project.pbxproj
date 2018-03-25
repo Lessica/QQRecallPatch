@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0F0E716C20661F490058DFF7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0E716B20661F490058DFF7 /* StoreKit.framework */; };
 		0F0E716E20661F5E0058DFF7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0E716D20661F5E0058DFF7 /* HealthKit.framework */; };
-		0F4708992066949C0037B282 /* UIView+XXTEToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F4708972066949C0037B282 /* UIView+XXTEToast.h */; };
-		0F47089A2066949C0037B282 /* UIView+XXTEToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4708982066949C0037B282 /* UIView+XXTEToast.m */; };
 		0F8FC9B92065611700B838AA /* NSObject+QQMessageRecallModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F8FC9B72065611700B838AA /* NSObject+QQMessageRecallModule.h */; };
 		0F8FC9BA2065611700B838AA /* NSObject+QQMessageRecallModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FC9B82065611700B838AA /* NSObject+QQMessageRecallModule.mm */; };
 		0FAB414A206562C6006AA51C /* NSObject+JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FAB4148206562C6006AA51C /* NSObject+JRSwizzle.h */; };
@@ -63,8 +61,6 @@
 		0F0E716A20661F380058DFF7 /* QQRecallPatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QQRecallPatch.entitlements; sourceTree = "<group>"; };
 		0F0E716B20661F490058DFF7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0F0E716D20661F5E0058DFF7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		0F4708972066949C0037B282 /* UIView+XXTEToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXTEToast.h"; sourceTree = "<group>"; };
-		0F4708982066949C0037B282 /* UIView+XXTEToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXTEToast.m"; sourceTree = "<group>"; };
 		0F8FC9B72065611700B838AA /* NSObject+QQMessageRecallModule.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = "NSObject+QQMessageRecallModule.h"; sourceTree = "<group>"; };
 		0F8FC9B82065611700B838AA /* NSObject+QQMessageRecallModule.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+QQMessageRecallModule.mm"; sourceTree = "<group>"; };
 		0FAB4148206562C6006AA51C /* NSObject+JRSwizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+JRSwizzle.h"; sourceTree = "<group>"; };
@@ -205,8 +201,6 @@
 				0F8FC9B82065611700B838AA /* NSObject+QQMessageRecallModule.mm */,
 				0FAB4148206562C6006AA51C /* NSObject+JRSwizzle.h */,
 				0FAB4149206562C6006AA51C /* NSObject+JRSwizzle.m */,
-				0F4708972066949C0037B282 /* UIView+XXTEToast.h */,
-				0F4708982066949C0037B282 /* UIView+XXTEToast.m */,
 				0FBAF7222065510E006327D3 /* Logos */,
 				0FBAF7262065510E006327D3 /* Tools */,
 				0FBAF72B2065510E006327D3 /* MethodTrace */,
@@ -287,7 +281,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F4708992066949C0037B282 /* UIView+XXTEToast.h in Headers */,
 				0F8FC9B92065611700B838AA /* NSObject+QQMessageRecallModule.h in Headers */,
 				0FBAF73F2065510E006327D3 /* QQRecallPatchDylib.h in Headers */,
 				0FBAF7282065510E006327D3 /* LLDBTools.h in Headers */,
@@ -507,7 +500,6 @@
 				0FBAF72F2065510E006327D3 /* ANYMethodLog.m in Sources */,
 				0FBAF73B2065510E006327D3 /* fishhook.c in Sources */,
 				0FBAF72A2065510E006327D3 /* LLDBTools.mm in Sources */,
-				0F47089A2066949C0037B282 /* UIView+XXTEToast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

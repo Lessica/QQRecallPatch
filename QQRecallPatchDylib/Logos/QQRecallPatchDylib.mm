@@ -16,6 +16,7 @@
 @end
 
 
+
 #include <substrate.h>
 #if defined(__clang__)
 #if __has_feature(objc_arc)
@@ -36,10 +37,10 @@
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class QQSettingsViewController; @class PreviewSecretPictureViewController; @class QQViewController; 
+@class PreviewSecretPictureViewController; @class QQViewController; @class QQSettingsViewController; 
 static void (*_logos_orig$_ungrouped$QQViewController$viewDidLoad)(_LOGOS_SELF_TYPE_NORMAL QQViewController* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$QQViewController$viewDidLoad(_LOGOS_SELF_TYPE_NORMAL QQViewController* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$QQSettingsViewController$viewDidLoad)(_LOGOS_SELF_TYPE_NORMAL QQSettingsViewController* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$QQSettingsViewController$viewDidLoad(_LOGOS_SELF_TYPE_NORMAL QQSettingsViewController* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$QQSettingsViewController$tweakItemTapped$(_LOGOS_SELF_TYPE_NORMAL QQSettingsViewController* _LOGOS_SELF_CONST, SEL, id); static void (*_logos_orig$_ungrouped$PreviewSecretPictureViewController$handleDidTakeScreenshot$)(_LOGOS_SELF_TYPE_NORMAL PreviewSecretPictureViewController* _LOGOS_SELF_CONST, SEL, id); static void _logos_method$_ungrouped$PreviewSecretPictureViewController$handleDidTakeScreenshot$(_LOGOS_SELF_TYPE_NORMAL PreviewSecretPictureViewController* _LOGOS_SELF_CONST, SEL, id); static void (*_logos_orig$_ungrouped$PreviewSecretPictureViewController$downloadImageHandler$imageUrl$isSuccess$downloadImage$)(_LOGOS_SELF_TYPE_NORMAL PreviewSecretPictureViewController* _LOGOS_SELF_CONST, SEL, id, id, _Bool, UIImage *); static void _logos_method$_ungrouped$PreviewSecretPictureViewController$downloadImageHandler$imageUrl$isSuccess$downloadImage$(_LOGOS_SELF_TYPE_NORMAL PreviewSecretPictureViewController* _LOGOS_SELF_CONST, SEL, id, id, _Bool, UIImage *); static void _logos_method$_ungrouped$PreviewSecretPictureViewController$secretImage$didFinishSavingWithError$contextInfo$(_LOGOS_SELF_TYPE_NORMAL PreviewSecretPictureViewController* _LOGOS_SELF_CONST, SEL, UIImage *, NSError *, void *); 
 
-#line 17 "/Users/Zheng/Projects/QQRecallPatch/QQRecallPatchDylib/Logos/QQRecallPatchDylib.xm"
+#line 18 "/Users/Zheng/Projects/QQRecallPatch/QQRecallPatchDylib/Logos/QQRecallPatchDylib.xm"
 
 
 static void _logos_method$_ungrouped$QQViewController$viewDidLoad(_LOGOS_SELF_TYPE_NORMAL QQViewController* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
@@ -47,6 +48,7 @@ static void _logos_method$_ungrouped$QQViewController$viewDidLoad(_LOGOS_SELF_TY
     [dic setValue:@"com.tencent.mqq" forKey:@"CFBundleIdentifier"];
     _logos_orig$_ungrouped$QQViewController$viewDidLoad(self, _cmd);
 }
+
 
 
 
@@ -65,6 +67,7 @@ static void _logos_method$_ungrouped$QQSettingsViewController$tweakItemTapped$(_
     NSString *xuiPath = [[NSBundle bundleWithPath:bundlePath] pathForResource:@"interface" ofType:@"json"];
     [XUIListViewController presentFromTopViewControllerWithPath:xuiPath withBundlePath:bundlePath]; 
 }
+
 
 
 
@@ -109,4 +112,4 @@ static void _logos_method$_ungrouped$PreviewSecretPictureViewController$secretIm
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$QQViewController = objc_getClass("QQViewController"); MSHookMessageEx(_logos_class$_ungrouped$QQViewController, @selector(viewDidLoad), (IMP)&_logos_method$_ungrouped$QQViewController$viewDidLoad, (IMP*)&_logos_orig$_ungrouped$QQViewController$viewDidLoad);Class _logos_class$_ungrouped$QQSettingsViewController = objc_getClass("QQSettingsViewController"); MSHookMessageEx(_logos_class$_ungrouped$QQSettingsViewController, @selector(viewDidLoad), (IMP)&_logos_method$_ungrouped$QQSettingsViewController$viewDidLoad, (IMP*)&_logos_orig$_ungrouped$QQSettingsViewController$viewDidLoad);{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$QQSettingsViewController, @selector(tweakItemTapped:), (IMP)&_logos_method$_ungrouped$QQSettingsViewController$tweakItemTapped$, _typeEncoding); }Class _logos_class$_ungrouped$PreviewSecretPictureViewController = objc_getClass("PreviewSecretPictureViewController"); MSHookMessageEx(_logos_class$_ungrouped$PreviewSecretPictureViewController, @selector(handleDidTakeScreenshot:), (IMP)&_logos_method$_ungrouped$PreviewSecretPictureViewController$handleDidTakeScreenshot$, (IMP*)&_logos_orig$_ungrouped$PreviewSecretPictureViewController$handleDidTakeScreenshot$);MSHookMessageEx(_logos_class$_ungrouped$PreviewSecretPictureViewController, @selector(downloadImageHandler:imageUrl:isSuccess:downloadImage:), (IMP)&_logos_method$_ungrouped$PreviewSecretPictureViewController$downloadImageHandler$imageUrl$isSuccess$downloadImage$, (IMP*)&_logos_orig$_ungrouped$PreviewSecretPictureViewController$downloadImageHandler$imageUrl$isSuccess$downloadImage$);{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; memcpy(_typeEncoding + i, @encode(UIImage *), strlen(@encode(UIImage *))); i += strlen(@encode(UIImage *)); memcpy(_typeEncoding + i, @encode(NSError *), strlen(@encode(NSError *))); i += strlen(@encode(NSError *)); _typeEncoding[i] = '^'; _typeEncoding[i + 1] = 'v'; i += 2; _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$PreviewSecretPictureViewController, @selector(secretImage:didFinishSavingWithError:contextInfo:), (IMP)&_logos_method$_ungrouped$PreviewSecretPictureViewController$secretImage$didFinishSavingWithError$contextInfo$, _typeEncoding); }} }
-#line 84 "/Users/Zheng/Projects/QQRecallPatch/QQRecallPatchDylib/Logos/QQRecallPatchDylib.xm"
+#line 87 "/Users/Zheng/Projects/QQRecallPatch/QQRecallPatchDylib/Logos/QQRecallPatchDylib.xm"

@@ -14,6 +14,7 @@
 - (void)secretImage:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
 @end
 
+
 %hook QQViewController
 
 - (void)viewDidLoad {
@@ -23,6 +24,7 @@
 }
 
 %end
+
 
 %hook QQSettingsViewController
 
@@ -41,6 +43,7 @@
 }
 
 %end
+
 
 %hook PreviewSecretPictureViewController
 
