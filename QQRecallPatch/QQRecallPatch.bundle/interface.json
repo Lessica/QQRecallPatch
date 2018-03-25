@@ -1,0 +1,28 @@
+{
+    "title":"插件配置",
+    "theme":{
+        "navigationTitleColor": "#000000",
+        "navigationBarColor": "#FFFFFF"
+    },
+    "items":[
+        {
+            "label":"功能",
+            "cell":"Group",
+            "footerText":"Author: i_82 <i.82@me.com>"
+        },
+        {
+            "cell":"Switch",
+            "label":"开启防撤回",
+            "key":"RecallPatchEnabled",
+            "default":true
+        },
+        {
+            "cell":"Switch",
+            "label":"自动保存闪照",
+            "key":"AutoSaveFlashEnabled",
+            "default":true
+        }
+    ]
+}
+
+

@@ -1,0 +1,6 @@
+#.gitignore  
+# ignore cocoaPods  
+Pods
+LatestBuild
+QQRecallPatch/TargetApp
+
