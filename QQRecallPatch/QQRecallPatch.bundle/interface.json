@@ -6,24 +6,15 @@
     },
     "items":[
         {
-            "label":"防撤回",
-            "cell":"Group"
+            "label":"",
+            "cell":"Group",
+            "footerText":"Author: i_82 <i.82@me.com>"
         },
         {
             "cell":"Switch",
             "label":"开启防撤回",
             "key":"RecallPatchEnabled",
             "default":true
-        },
-        {
-            "cell":"Switch",
-            "label":"消息撤回提醒",
-            "key":"RecallToastEnabled",
-            "default":true
-        },
-        {
-            "label":"闪照",
-            "cell":"Group"
         },
         {
             "cell":"Switch",

@@ -2,6 +2,9 @@
 
 #import <UIKit/UIKit.h>
 #import <XUI/XUI.h>
+#import <objc/runtime.h>
+
+
 
 @interface QQViewController : UIViewController
 @end
@@ -12,6 +15,10 @@
 
 @interface PreviewSecretPictureViewController : UIViewController
 - (void)secretImage:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+@end
+
+@interface QQToastView : UIView
++ (void)showTips:(NSString *)arg1 atRootView:(UIView *)arg2;
 @end
 
 
@@ -39,7 +46,7 @@
 - (void)tweakItemTapped:(id)sender {
     NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"QQRecallPatch" ofType:@"bundle"];
     NSString *xuiPath = [[NSBundle bundleWithPath:bundlePath] pathForResource:@"interface" ofType:@"json"];
-    [XUIListViewController presentFromTopViewControllerWithPath:xuiPath withBundlePath:bundlePath]; // 从顶层 UIViewController 将 XUI 配置界面 present 出来
+    [self.navigationController pushViewController:[XUIListViewController XUIWithPath:xuiPath withBundlePath:bundlePath] animated:YES];
 }
 
 %end
@@ -75,12 +82,7 @@
 
 %new
 - (void)secretImage:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"插件提示"
-                                                        message:@"闪照已成功保存到相机胶卷"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"好"
-                                              otherButtonTitles:nil];
-    [alertView show];
+    [objc_getClass("QQToastView") showTips:@"闪照已成功保存到相机胶卷" atRootView:[[UIApplication sharedApplication] keyWindow]];
 }
 
 %end
